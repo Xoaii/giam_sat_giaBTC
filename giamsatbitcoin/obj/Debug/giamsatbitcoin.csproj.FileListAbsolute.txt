@@ -1,0 +1,7 @@
+D:\tai lieu hoc tap\laptrinhpython\bit\giamsatbitcoin\giamsatbitcoin\bin\giamsatbitcoin.dll.config
+D:\tai lieu hoc tap\laptrinhpython\bit\giamsatbitcoin\giamsatbitcoin\bin\giamsatbitcoin.dll
+D:\tai lieu hoc tap\laptrinhpython\bit\giamsatbitcoin\giamsatbitcoin\bin\giamsatbitcoin.pdb
+D:\tai lieu hoc tap\laptrinhpython\bit\giamsatbitcoin\giamsatbitcoin\obj\Debug\giamsatbitcoin.csproj.AssemblyReference.cache
+D:\tai lieu hoc tap\laptrinhpython\bit\giamsatbitcoin\giamsatbitcoin\obj\Debug\giamsatbitcoin.csproj.CoreCompileInputs.cache
+D:\tai lieu hoc tap\laptrinhpython\bit\giamsatbitcoin\giamsatbitcoin\obj\Debug\giamsatbitcoin.dll
+D:\tai lieu hoc tap\laptrinhpython\bit\giamsatbitcoin\giamsatbitcoin\obj\Debug\giamsatbitcoin.pdb

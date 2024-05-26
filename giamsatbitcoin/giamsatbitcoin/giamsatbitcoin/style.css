@@ -1,0 +1,93 @@
+﻿body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 90%;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 150px
+}
+
+.current-price, .conversion {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+
+#myChart {
+    width: 100%;
+    height: 400px;
+    max-height: 400px; /* Ensuring the chart doesn't grow indefinitely */
+}
+#currentPrice{
+    font-weight: bold;
+    color:green;
+}
+.conversion #exportExcelBtn {
+    background-color: #217346; /* Màu nền xanh đậm giống màu Excel */
+    color: white; /* Màu chữ trắng */
+    border: none; /* Loại bỏ viền */
+    padding: 10px 20px; /* Thêm đệm */
+    font-size: 16px; /* Kích thước chữ */
+    font-weight: bold; /* Chữ đậm */
+    border-radius: 5px; /* Bo góc */
+    cursor: pointer; /* Đổi con trỏ khi hover */
+   
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+    #exportExcelBtn:hover {
+        background-color: #1e5e39; /* Màu nền khi hover */
+    }
+
+    #exportExcelBtn i {
+        margin-right: 10px; /* Khoảng cách giữa biểu tượng và văn bản */
+    }
+.history {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+    .history h2 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .history ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .history li {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #666;
+    }
+
+        .history li:last-child {
+            border-bottom: none;
+        }

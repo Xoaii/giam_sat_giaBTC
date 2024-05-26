@@ -1,0 +1,204 @@
+[
+    {
+        "id": "cb152491b9116b13",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0d721b4b9836a768",
+        "type": "debug",
+        "z": "cb152491b9116b13",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "16ad9126523bbefb",
+        "type": "http request",
+        "z": "cb152491b9116b13",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://127.0.0.1:8000/",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 330,
+        "y": 460,
+        "wires": [
+            [
+                "4212d0e1a5a18d9c"
+            ]
+        ]
+    },
+    {
+        "id": "7bf36e1c0c93f126",
+        "type": "inject",
+        "z": "cb152491b9116b13",
+        "name": "bitcoin",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 420,
+        "wires": [
+            [
+                "16ad9126523bbefb"
+            ]
+        ]
+    },
+    {
+        "id": "7506de24e69a6a5e",
+        "type": "debug",
+        "z": "cb152491b9116b13",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "ad9478fc1a837ca8",
+        "type": "MSSQL",
+        "z": "cb152491b9116b13",
+        "mssqlCN": "4b27d799493ce389",
+        "name": "bit",
+        "outField": "payload",
+        "returnType": "0",
+        "throwErrors": "0",
+        "query": "SP_insertPrice",
+        "modeOpt": "",
+        "modeOptType": "execute",
+        "queryOpt": "",
+        "queryOptType": "editor",
+        "paramsOpt": "",
+        "paramsOptType": "editor",
+        "rows": "",
+        "rowsType": "msg",
+        "parseMustache": true,
+        "params": [
+            {
+                "output": false,
+                "name": "cid",
+                "type": "int",
+                "valueType": "str",
+                "value": "1",
+                "options": {
+                    "nullable": true,
+                    "primary": false,
+                    "identity": false,
+                    "readOnly": false
+                }
+            },
+            {
+                "output": false,
+                "name": "priceCoin",
+                "type": "Decimal(18,0)",
+                "valueType": "msg",
+                "value": "payload.exchange_rate",
+                "options": {
+                    "nullable": true,
+                    "primary": false,
+                    "identity": false,
+                    "readOnly": false
+                }
+            },
+            {
+                "output": false,
+                "name": "time",
+                "type": "DateTime",
+                "valueType": "msg",
+                "value": "payload.last_refreshed",
+                "options": {
+                    "nullable": true,
+                    "primary": false,
+                    "identity": false,
+                    "readOnly": false
+                }
+            }
+        ],
+        "x": 730,
+        "y": 500,
+        "wires": [
+            [
+                "0d721b4b9836a768"
+            ]
+        ]
+    },
+    {
+        "id": "4212d0e1a5a18d9c",
+        "type": "function",
+        "z": "cb152491b9116b13",
+        "name": "function 5",
+        "func": "msg.payload =JSON.parse(msg.payload);\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 460,
+        "wires": [
+            [
+                "7506de24e69a6a5e",
+                "ad9478fc1a837ca8"
+            ]
+        ]
+    },
+    {
+        "id": "4b27d799493ce389",
+        "type": "MSSQL-CN",
+        "tdsVersion": "7_4",
+        "name": "bit",
+        "server": "127.0.0.1",
+        "port": "1443",
+        "encyption": true,
+        "trustServerCertificate": true,
+        "database": "bit",
+        "useUTC": false,
+        "connectTimeout": "",
+        "requestTimeout": "",
+        "cancelTimeout": "",
+        "pool": "",
+        "parseJSON": false,
+        "enableArithAbort": true,
+        "readOnlyIntent": false
+    }
+]
