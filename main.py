@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 import requests
-
+# khởi tạo fastapi
 app = FastAPI()
 
 @app.get("/")
